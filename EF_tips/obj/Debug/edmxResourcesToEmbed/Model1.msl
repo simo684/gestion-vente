@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="gestion_commandeModelStoreContainer" CdmEntityContainer="gestion_commandeEntities">
+    <EntitySetMapping Name="client">
+      <EntityTypeMapping TypeName="gestion_commandeModel.client">
+        <MappingFragment StoreEntitySet="client">
+          <ScalarProperty Name="id_cl" ColumnName="id_cl" />
+          <ScalarProperty Name="num_cl" ColumnName="num_cl" />
+          <ScalarProperty Name="nom_cl" ColumnName="nom_cl" />
+          <ScalarProperty Name="prenom_cl" ColumnName="prenom_cl" />
+          <ScalarProperty Name="vill" ColumnName="vill" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
