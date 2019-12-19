@@ -4,11 +4,12 @@
     <Key>
       <PropertyRef Name="id_cl" />
     </Key>
-    <Property Name="id_cl" Type="int" Nullable="false" />
+    <Property Name="id_cl" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="num_cl" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="nom_cl" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="prenom_cl" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="vill" Type="nvarchar" MaxLength="50" />
+    <Property Name="ville" Type="nvarchar" MaxLength="50" />
+    <Property Name="age" Type="int" />
   </EntityType>
   <EntityContainer Name="gestion_commandeModelStoreContainer">
     <EntitySet Name="client" EntityType="Self.client" Schema="dbo" store:Type="Tables" />

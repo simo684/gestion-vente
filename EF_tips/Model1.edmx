@@ -4,38 +4,39 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="gestion_commandeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="gestion_commandeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="client">
           <Key>
             <PropertyRef Name="id_cl" />
           </Key>
-          <Property Name="id_cl" Type="int" Nullable="false" />
+          <Property Name="id_cl" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="num_cl" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="nom_cl" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="prenom_cl" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="vill" Type="nvarchar" MaxLength="50" />
+          <Property Name="ville" Type="nvarchar" MaxLength="50" />
+          <Property Name="age" Type="int" />
         </EntityType>
         <EntityContainer Name="gestion_commandeModelStoreContainer">
           <EntitySet Name="client" EntityType="Self.client" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="gestion_commandeModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="gestion_commandeEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="client" EntityType="gestion_commandeModel.client" />
+        </EntityContainer>
         <EntityType Name="client">
           <Key>
             <PropertyRef Name="id_cl" />
           </Key>
-          <Property Name="id_cl" Type="Int32" Nullable="false" />
-          <Property Name="num_cl" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="nom_cl" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="prenom_cl" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="vill" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="id_cl" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="num_cl" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="nom_cl" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="prenom_cl" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ville" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="age" Type="Int32" />
         </EntityType>
-        <EntityContainer Name="gestion_commandeEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="client" EntityType="Self.client" />
-        </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -45,11 +46,12 @@
           <EntitySetMapping Name="client">
             <EntityTypeMapping TypeName="gestion_commandeModel.client">
               <MappingFragment StoreEntitySet="client">
-                <ScalarProperty Name="id_cl" ColumnName="id_cl" />
-                <ScalarProperty Name="num_cl" ColumnName="num_cl" />
-                <ScalarProperty Name="nom_cl" ColumnName="nom_cl" />
+                <ScalarProperty Name="age" ColumnName="age" />
+                <ScalarProperty Name="ville" ColumnName="ville" />
                 <ScalarProperty Name="prenom_cl" ColumnName="prenom_cl" />
-                <ScalarProperty Name="vill" ColumnName="vill" />
+                <ScalarProperty Name="nom_cl" ColumnName="nom_cl" />
+                <ScalarProperty Name="num_cl" ColumnName="num_cl" />
+                <ScalarProperty Name="id_cl" ColumnName="id_cl" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

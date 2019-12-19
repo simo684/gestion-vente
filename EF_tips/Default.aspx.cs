@@ -19,7 +19,7 @@ namespace EF_tips
                 {
                     foreach (var item in cli)
                     {
-                        divDatos.InnerHtml += item.nom_cl + " " + item.prenom_cl + " - " + item.vill + "<br/>";
+                        divDatos.InnerHtml += item.nom_cl + " " + item.prenom_cl + " - " + item.ville + item.age + "<br/>";
                     }
                 }
                 else

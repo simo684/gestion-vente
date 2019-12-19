@@ -4,11 +4,12 @@
     <EntitySetMapping Name="client">
       <EntityTypeMapping TypeName="gestion_commandeModel.client">
         <MappingFragment StoreEntitySet="client">
-          <ScalarProperty Name="id_cl" ColumnName="id_cl" />
-          <ScalarProperty Name="num_cl" ColumnName="num_cl" />
-          <ScalarProperty Name="nom_cl" ColumnName="nom_cl" />
+          <ScalarProperty Name="age" ColumnName="age" />
+          <ScalarProperty Name="ville" ColumnName="ville" />
           <ScalarProperty Name="prenom_cl" ColumnName="prenom_cl" />
-          <ScalarProperty Name="vill" ColumnName="vill" />
+          <ScalarProperty Name="nom_cl" ColumnName="nom_cl" />
+          <ScalarProperty Name="num_cl" ColumnName="num_cl" />
+          <ScalarProperty Name="id_cl" ColumnName="id_cl" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

@@ -18,6 +18,7 @@ namespace EF_tips
         public string num_cl { get; set; }
         public string nom_cl { get; set; }
         public string prenom_cl { get; set; }
-        public string vill { get; set; }
+        public string ville { get; set; }
+        public Nullable<int> age { get; set; }
     }
 }
